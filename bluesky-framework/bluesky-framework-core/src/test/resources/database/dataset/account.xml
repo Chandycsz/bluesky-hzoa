@@ -1,0 +1,4 @@
+<?xml version='1.0' encoding='utf-8'?>
+<dataset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../xsd/dataset.xsd">
+    <account id="1" name="姓名" nick_name="昵称" head_img="www.baidu.com" mobile="13000000000" role_type="1" role_id="1" organization_id="1" department="部门" id_card="身份证号" password="123456" last_login_ip="192.183.1.1" last_login_time="2019-04-03 12:00:00" authorities_text="ROLE_TEST" sort="1" status="0" created_at="2018-8-5 08:00:00" updated_at="2018-8-5 08:00:00"/>
+</dataset>

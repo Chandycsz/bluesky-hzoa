@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" xmlns:dflt="bluesky_framework_test">
+	<xsd:import namespace="bluesky_framework_test" schemaLocation="bluesky_framework_test.xsd" />
+	<xsd:element name="dataset">
+		<xsd:complexType>
+			<xsd:choice minOccurs="0" maxOccurs="unbounded">
+				<xsd:element name="role" type="dflt:role__type" />
+				<xsd:element name="account_authority" type="dflt:account_authority__type" />
+				<xsd:element name="dbmaintain_scripts" type="dflt:dbmaintain_scripts__type" />
+				<xsd:element name="menu_source_operation" type="dflt:menu_source_operation__type" />
+				<xsd:element name="role_authority" type="dflt:role_authority__type" />
+				<xsd:element name="menu_source" type="dflt:menu_source__type" />
+				<xsd:element name="account_login_log" type="dflt:account_login_log__type" />
+				<xsd:element name="account_operate_log" type="dflt:account_operate_log__type" />
+				<xsd:element name="organization" type="dflt:organization__type" />
+				<xsd:element name="page_setting" type="dflt:page_setting__type" />
+				<xsd:element name="personal_user_verification" type="dflt:personal_user_verification__type" />
+				<xsd:element name="region" type="dflt:region__type" />
+				<xsd:element name="custom_index" type="dflt:custom_index__type" />
+				<xsd:element name="account" type="dflt:account__type" />
+				<xsd:any namespace="bluesky_framework_test" />
+			</xsd:choice>
+		</xsd:complexType>
+	</xsd:element>
+</xsd:schema>

@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" xmlns="account_test" targetNamespace="account_test">
+    <xsd:element name="account_login_log" type="account_login_log__type"/>
+    <xsd:element name="account_operate_log" type="account_operate_log__type"/>
+    <xsd:element name="role" type="role__type"/>
+    <xsd:element name="account_authority" type="account_authority__type"/>
+    <xsd:element name="organization" type="organization__type"/>
+    <xsd:element name="dbmaintain_scripts" type="dbmaintain_scripts__type"/>
+    <xsd:element name="personal_user_verification" type="personal_user_verification__type"/>
+    <xsd:element name="region" type="region__type"/>
+    <xsd:element name="account" type="account__type"/>
+    <xsd:element name="role_authority" type="role_authority__type"/>
+    <xsd:complexType name="account_login_log__type">
+        <xsd:attribute name="ip" use="optional"/>
+        <xsd:attribute name="mobile" use="optional"/>
+        <xsd:attribute name="memo" use="optional"/>
+        <xsd:attribute name="created_at" use="optional"/>
+        <xsd:attribute name="organization_name" use="optional"/>
+        <xsd:attribute name="type" use="optional"/>
+        <xsd:attribute name="ip_area" use="optional"/>
+        <xsd:attribute name="account_id" use="optional"/>
+        <xsd:attribute name="updated_at" use="optional"/>
+        <xsd:attribute name="success" use="optional"/>
+        <xsd:attribute name="account_name" use="optional"/>
+        <xsd:attribute name="organization_id" use="optional"/>
+        <xsd:attribute name="id" use="optional"/>
+    </xsd:complexType>
+    <xsd:complexType name="account_operate_log__type">
+        <xsd:attribute name="step_code" use="optional"/>
+        <xsd:attribute name="ip" use="optional"/>
+        <xsd:attribute name="mobile" use="optional"/>
+        <xsd:attribute name="memo" use="optional"/>
+        <xsd:attribute name="created_at" use="optional"/>
+        <xsd:attribute name="organization_name" use="optional"/>
+        <xsd:attribute name="ip_area" use="optional"/>
+        <xsd:attribute name="account_id" use="optional"/>
+        <xsd:attribute name="updated_at" use="optional"/>
+        <xsd:attribute name="account_name" use="optional"/>
+        <xsd:attribute name="organization_id" use="optional"/>
+        <xsd:attribute name="step" use="optional"/>
+        <xsd:attribute name="id" use="optional"/>
+    </xsd:complexType>
+    <xsd:complexType name="role__type">
+        <xsd:attribute name="updated_at" use="optional"/>
+        <xsd:attribute name="level" use="optional"/>
+        <xsd:attribute name="name" use="optional"/>
+        <xsd:attribute name="created_at" use="optional"/>
+        <xsd:attribute name="id" use="optional"/>
+        <xsd:attribute name="type" use="optional"/>
+        <xsd:attribute name="status" use="optional"/>
+    </xsd:complexType>
+    <xsd:complexType name="account_authority__type">
+        <xsd:attribute name="account_id" use="optional"/>
+        <xsd:attribute name="updated_at" use="optional"/>
+        <xsd:attribute name="created_at" use="optional"/>
+        <xsd:attribute name="operation_id" use="optional"/>
+        <xsd:attribute name="id" use="optional"/>
+        <xsd:attribute name="operation" use="optional"/>
+    </xsd:complexType>
+    <xsd:complexType name="organization__type">
+        <xsd:attribute name="code" use="optional"/>
+        <xsd:attribute name="area_code" use="optional"/>
+        <xsd:attribute name="region_id" use="optional"/>
+        <xsd:attribute name="memo" use="optional"/>
+        <xsd:attribute name="created_at" use="optional"/>
+        <xsd:attribute name="sort" use="optional"/>
+        <xsd:attribute name="parent_ids" use="optional"/>
+        <xsd:attribute name="full_name" use="optional"/>
+        <xsd:attribute name="updated_at" use="optional"/>
+        <xsd:attribute name="name" use="optional"/>
+        <xsd:attribute name="unified_social_credit_code" use="optional"/>
+        <xsd:attribute name="id" use="optional"/>
+        <xsd:attribute name="status" use="optional"/>
+    </xsd:complexType>
+    <xsd:complexType name="dbmaintain_scripts__type">
+        <xsd:attribute name="file_name" use="optional"/>
+        <xsd:attribute name="executed_at" use="optional"/>
+        <xsd:attribute name="checksum" use="optional"/>
+        <xsd:attribute name="file_last_modified_at" use="optional"/>
+        <xsd:attribute name="version" use="optional"/>
+        <xsd:attribute name="succeeded" use="optional"/>
+    </xsd:complexType>
+    <xsd:complexType name="personal_user_verification__type">
+        <xsd:attribute name="account_id" use="optional"/>
+        <xsd:attribute name="nationality" use="optional"/>
+        <xsd:attribute name="updated_at" use="optional"/>
+        <xsd:attribute name="verification_at" use="optional"/>
+        <xsd:attribute name="name" use="optional"/>
+        <xsd:attribute name="mobile" use="optional"/>
+        <xsd:attribute name="id_card" use="optional"/>
+        <xsd:attribute name="created_at" use="optional"/>
+        <xsd:attribute name="id" use="optional"/>
+        <xsd:attribute name="connect_address" use="optional"/>
+        <xsd:attribute name="email" use="optional"/>
+        <xsd:attribute name="status" use="optional"/>
+    </xsd:complexType>
+    <xsd:complexType name="region__type">
+        <xsd:attribute name="code" use="optional"/>
+        <xsd:attribute name="top" use="optional"/>
+        <xsd:attribute name="updated_at" use="optional"/>
+        <xsd:attribute name="level" use="optional"/>
+        <xsd:attribute name="parent_id" use="optional"/>
+        <xsd:attribute name="name" use="optional"/>
+        <xsd:attribute name="parent_code" use="optional"/>
+        <xsd:attribute name="created_at" use="optional"/>
+        <xsd:attribute name="id" use="optional"/>
+        <xsd:attribute name="leaf" use="optional"/>
+        <xsd:attribute name="status" use="optional"/>
+    </xsd:complexType>
+    <xsd:complexType name="account__type">
+        <xsd:attribute name="role_type" use="optional"/>
+        <xsd:attribute name="last_login_time" use="optional"/>
+        <xsd:attribute name="head_img" use="optional"/>
+        <xsd:attribute name="mobile" use="optional"/>
+        <xsd:attribute name="id_card" use="optional"/>
+        <xsd:attribute name="created_at" use="optional"/>
+        <xsd:attribute name="sort" use="optional"/>
+        <xsd:attribute name="authorities_text" use="optional"/>
+        <xsd:attribute name="password" use="optional"/>
+        <xsd:attribute name="updated_at" use="optional"/>
+        <xsd:attribute name="role_id" use="optional"/>
+        <xsd:attribute name="last_login_ip" use="optional"/>
+        <xsd:attribute name="nick_name" use="optional"/>
+        <xsd:attribute name="organization_id" use="optional"/>
+        <xsd:attribute name="name" use="optional"/>
+        <xsd:attribute name="id" use="optional"/>
+        <xsd:attribute name="department" use="optional"/>
+        <xsd:attribute name="status" use="optional"/>
+    </xsd:complexType>
+    <xsd:complexType name="role_authority__type">
+        <xsd:attribute name="updated_at" use="optional"/>
+        <xsd:attribute name="role_id" use="optional"/>
+        <xsd:attribute name="created_at" use="optional"/>
+        <xsd:attribute name="operation_id" use="optional"/>
+        <xsd:attribute name="id" use="optional"/>
+        <xsd:attribute name="operation" use="optional"/>
+    </xsd:complexType>
+</xsd:schema>

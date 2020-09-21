@@ -1,0 +1,69 @@
+import Vue from "vue";
+import {
+    Breadcrumb,
+    Table,
+    Row,
+    Col,
+    Modal,
+    Avatar,
+    Button,
+    Cascader,
+    Checkbox,
+    Carousel,
+    DatePicker,
+    Form,
+    Icon,
+    Input,
+    InputNumber,
+    LocaleProvider,
+    message,
+    Popover,
+    Pagination,
+    Radio,
+    Spin,
+    Select,
+    Tabs,
+    Tooltip,
+    TreeSelect,
+    Upload,
+    Menu,
+    Layout,
+    Card,
+    Drawer,
+    Dropdown,
+    Tree
+} from "ant-design-vue";
+Vue.use(Avatar);
+Vue.use(Button);
+Vue.use(Breadcrumb);
+Vue.use(Card);
+Vue.use(Cascader);
+Vue.use(Carousel);
+Vue.use(Checkbox);
+Vue.use(Col);
+Vue.use(DatePicker);
+Vue.use(Drawer);
+Vue.use(Dropdown);
+Vue.use(Form);
+Vue.use(Icon);
+Vue.use(Input);
+Vue.use(InputNumber);
+Vue.use(Layout);
+Vue.use(LocaleProvider);
+Vue.use(Modal);
+Vue.use(Menu);
+Vue.use(Popover);
+Vue.use(Pagination);
+Vue.use(Radio);
+Vue.use(Row);
+Vue.use(Spin);
+Vue.use(Select);
+Vue.use(Tabs);
+Vue.use(Table);
+Vue.use(Tree);
+Vue.use(Tooltip);
+Vue.use(TreeSelect);
+Vue.use(Upload);
+
+Vue.prototype.$Modal = Modal;
+Vue.prototype.$message = message;

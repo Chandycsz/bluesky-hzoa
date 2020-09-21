@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.bluesky.framework.domain.infrastructure.model.account.mapper.ProBaseInformationMapper">
+<!--    <resultMap id="ProBaseInformationResultMap" type="com.bluesky.framework.account.account.ProBaseInformation">-->
+<!--        <id jdbcType="BIGINT" property="pro_id" column="pro_id"/>-->
+<!--        <result jdbcType="INTEGER" property="pro_code" column="pro_code"/>-->
+<!--        <result jdbcType="VARCHAR" property="pro_manager" column="pro_manager"/>-->
+<!--        <result jdbcType="VARCHAR" property="pro_member" column="pro_member"/>-->
+<!--        <result jdbcType="TIMESTAMP" property="pro_start_time" column="pro_start_time" typeHandler="org.apache.ibatis.type.BlobTypeHandler"/>-->
+<!--        <result jdbcType="TIMESTAMP" property="pro_end_time" column="pro_end_time" typeHandler="org.apache.ibatis.type.BlobTypeHandler"/>-->
+<!--    </resultMap>-->
+<!--    <select id="findAllProgram" resultMap="ProBaseInformationResultMap">-->
+<!--        select * from pro_base_information-->
+<!--    </select>-->
+</mapper>
