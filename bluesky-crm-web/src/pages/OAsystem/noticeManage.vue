@@ -2,7 +2,7 @@
     <div>
         <a-card style="width:100%" :bordered="false">
             <div>
-                <a-button class="button" icon="plus" type="primary" @click="Submit">提交申请</a-button>
+                <a-button class="button" icon="plus" type="primary" @click="submitAdd">提交申请</a-button>
             </div>
             <div>
                 <div>
@@ -30,8 +30,9 @@
                     >{{record.headline}}</div>
                     <template slot="operation" slot-scope="text, record">
                         <div class="editable-row-operations">
-                            <a @click="() => Detail(record)">详情</a>
-                            <a v-if="record.current==record.total" @click="() => Sign(record)">签定</a>
+                            <a @click="() => Edit(record)">修改</a>
+                            <a @click="() => Delete(record)">删除</a>
+                            <a v-if="record.status===0" @click="() => handleSubmit(record)">提交申请</a>
                         </div>
                     </template>
                 </a-table>
@@ -41,7 +42,7 @@
 </template>
 
 <script>
-import { ListNoticeByCId } from "@/api/oasystem/notice";
+import { ListNoticeByCId, DeleteNoticeById } from "@/api/oasystem/notice";
 const columns = [
     {
         title: "标题",
@@ -70,41 +71,46 @@ const columns = [
         scopedSlots: { customRender: "operation" }
     }
 ];
-
-export function sortByKey(array, key) {
-    return array.sort(function(a, b) {
-        var x = a[key]; //如果要从大到小,把x,y互换就好
-        var y = b[key];
-        return x < y ? -1 : x > y ? 1 : 0;
-    });
-}
-export function compare(property) {
-    return function(a, b) {
-        var value1 = a[property];
-        var value2 = b[property];
-        return value1 - value2;
-    };
-}
 export default {
     data() {
         return {
             submitvisible: false,
-            status: "reviewing",
+            status: "Reviewing",
             columns,
             data: [],
-            isloading: false
+            isloading: false,
+            editvisible: false
         };
     },
     mounted() {
         this.ListNoticeByCId();
     },
     methods: {
+        Edit(record) {
+            this.editvisible = true;
+        },
         disabledDate(current) {
             return current < new Date().getTime() - 10 * 24 * 60 * 3600;
         },
-        Submit() {
+        submitAdd() {
             // this.submitvisible = true;
             this.$router.push({ name: "notice_add" });
+        },
+        Delete(record) {
+            this.isloading = true;
+            var id = record.id;
+            DeleteNoticeById(id)
+                .then(res => {
+                    this.$ajaxAfter(res).then(() => {
+                        this.data = this.data.filter(item => item.id !== id);
+                        this.$message.success("删除成功！");
+                        this.isloading = false;
+                    });
+                })
+                .catch(() => {
+                    this.$message.error("服务器出错！请稍后再试!");
+                    this.isloading = false;
+                });
         },
         ggOk() {
             this.submitvisible = false;
@@ -113,16 +119,23 @@ export default {
             this.submitvisible = false;
         },
         onChange(e) {
-            if (e.target.value == "Reviewing") {
-                this.status = "all";
-            }
+            if (e.target.value == "Reviewing") this.status = "Reviewing";
+            else if (e.target.value == "Passed") this.status = "Passed";
+            else if (e.target.value == "Returned") this.status = "Returned";
+            else if (e.target.value == "Invalid") this.status = "Invalid";
+            this.ListNoticeByCId();
         },
         ListNoticeByCId() {
-            var CId = this.$store.state.account.id;
-            ListNoticeByCId(CId)
+            this.isloading = true;
+            var value = {
+                CId: this.$store.state.account.id,
+                status: this.status
+            };
+            ListNoticeByCId(value)
                 .then(res => {
                     this.$ajaxAfter(res).then(() => {
                         this.data = res.data.data.list;
+                        this.isloading = false;
                     });
                 })
                 .catch(() => {

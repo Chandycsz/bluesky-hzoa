@@ -1,6 +1,6 @@
 package com.bluesky.framework.domain.infrastructure.model.account;
 
-import com.bluesky.oa_hangzhou.model.notice.Mapper.NoticeMapper;
+import com.bluesky.framework.domain.infrastructure.model.account.mapper.NoticeMapper;
 import com.bluesky.framework.domain.model.account.NoticeRepository;
 import com.bluesky.framework.account.account.Notice;
 import com.bluesky.framework.account.account.NoticeVo;
@@ -20,7 +20,13 @@ public class NoticeRepositoryImpl implements NoticeRepository {
     }
 
     @Override
-    public List<NoticeVo> ListNoticeByCId(Long cId) {
-        return noticeMapper.ListNoticeByCId(cId);
+    public List<NoticeVo> ListNoticeByCId(Long cId, int item) {
+        return noticeMapper.ListNoticeByCId(cId, item);
+    }
+
+
+    @Override
+    public void DeleteNoticeById(Long id) {
+        this.noticeMapper.DeleteNoticeById(id);
     }
 }

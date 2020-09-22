@@ -8,5 +8,7 @@ import java.util.List;
 public interface NoticeRepository {
     void addNotice(Notice notice);
 
-    List<NoticeVo> ListNoticeByCId(Long cId);
+    List<NoticeVo> ListNoticeByCId(Long cId, int item);
+
+    void DeleteNoticeById(Long id);
 }

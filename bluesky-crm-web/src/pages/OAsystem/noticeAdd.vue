@@ -27,7 +27,7 @@
                     rules: [{ required: true, message: '请选择失效时间' }],
                   },
                 ]"
-                        format="YY-MM-DD HH:mm:ss "
+                        format="YYYY-MM-DD HH:mm:ss "
                         placeholder="请选择失效日期"
                         style="width:100%"
                         show-time
@@ -87,7 +87,7 @@
                 </a-form-item>
                 <a-form-item :wrapperCol="{ span: 24 }" style="text-align: center">
                     <a-button htmlType="submit" type="primary">提交</a-button>
-                    <a-button style="margin-left: 8px">保存</a-button>
+                    <!-- <a-button @clstyle="margin-left: 8px">保存</a-button> -->
                 </a-form-item>
             </a-form>
         </a-card>
@@ -96,16 +96,19 @@
 
 <script>
 import { AddNotice } from "@/api/oasystem/notice";
+import Success from "@/components/Success";
 export default {
+    components: {
+        Success
+    },
     data() {
         return {
             form: this.$form.createForm(this),
-            fileList: []
+            fileList: [],
+            show: true
         };
     },
-    mounted() {
-        console.log(AddNotice);
-    },
+    mounted() {},
     methods: {
         handleSubmit(e) {
             e.preventDefault();
@@ -116,7 +119,10 @@ export default {
             this.form.validateFields((err, values) => {
                 if (!err) {
                     formData.append("headline", values.headline);
-                    formData.append("failureTime", values.failureTime);
+                    formData.append(
+                        "failureTime",
+                        values.failureTime.format("YYYY-MM-DD hh:mm:ss")
+                    );
                     formData.append("content", values.content);
                     formData.append("target", values.target);
                     formData.append("creatorId", this.$store.state.account.id);
@@ -124,6 +130,7 @@ export default {
                         .then(res => {
                             this.$ajaxAfter(res).then(() => {
                                 this.$message.success("提交成功!");
+                                this.$router.push({ name: "notice_manage" });
                             });
                         })
                         .catch(() => {

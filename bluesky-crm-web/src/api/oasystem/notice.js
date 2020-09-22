@@ -11,7 +11,13 @@ export function AddNotice(formData) {
     });
 }
 
-export function ListNoticeByCId(CId) {
-    return axios.post(api + "/notice/ListNoticeByCId", qs.stringify({ CId })
+export function ListNoticeByCId({CId,status}) {
+    return axios.post(api + "/notice/ListNoticeByCId", qs.stringify({ CId,status })
+    );
+}
+
+
+export function DeleteNoticeById(id) {
+    return axios.post(api + "/notice/DeleteNoticeById", qs.stringify({ id })
     );
 }

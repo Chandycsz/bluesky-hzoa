@@ -141,6 +141,7 @@ var router = new Router({
                                 return import("@/pages/setting/IndexManage");
                             }
                         },
+                        
                         {
                             name: "notice_manage",
                             path: "notice_manage",

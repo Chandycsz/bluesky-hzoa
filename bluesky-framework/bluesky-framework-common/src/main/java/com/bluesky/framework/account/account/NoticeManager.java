@@ -5,5 +5,9 @@ import java.util.List;
 public interface NoticeManager {
     void addNotice(Notice notice);
 
-    List<NoticeVo> ListNoticeByCId(Long cId);
+
+
+    void DeleteNoticeById(Long id);
+
+    List<NoticeVo> ListNoticeByCId(Long cId, int item);
 }

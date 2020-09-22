@@ -14,6 +14,7 @@
                 />
                 {{ storeAccount.name }}
             </span>
+            <a href="javascript:;" @click="back">首页</a>
             <a class="nav-right-item" href="javascript:;" @click="out">
                 退出
             </a>
@@ -32,7 +33,7 @@ export default {
     methods: {
         back() {
             this.$router.push({
-                name: "SelectModule"
+                name: "XyptHome"
             });
         },
         out() {
