@@ -56,7 +56,7 @@
                                         v-else
                                         :to="{
                                             path:
-                                                '/crm/new/page/' + twoMenu.code,
+                                                 twoMenu.code,
                                             query: { id: twoMenu.id }
                                         }"
                                         >{{ twoMenu.name }}</router-link

@@ -11,6 +11,7 @@ import com.bluesky.framework.account.region.RegionManager;
 import com.bluesky.framework.account.role.RoleManager;
 import com.bluesky.framework.setting.MenuSourceManager;
 import com.bluesky.framework.setting.PageSettingManager;
+import com.bluesky.framework.account.account.NoticeManager;
 import org.mvnsearch.spring.boot.dubbo.DubboAutoConfiguration;
 import org.mvnsearch.spring.boot.dubbo.DubboBasedAutoConfiguration;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -112,5 +113,10 @@ public class FrameworkAutoConfiguration extends DubboBasedAutoConfiguration {
     @Bean
     public ReferenceBean MissionManager() {
         return getConsumerBean(MissionManager.class, properties.getVersion(), properties.getTimeout());
+    }
+
+    @Bean
+    public ReferenceBean NoticeManager() {
+        return getConsumerBean(NoticeManager.class, properties.getVersion(), properties.getTimeout());
     }
 }

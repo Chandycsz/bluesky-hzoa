@@ -15,11 +15,11 @@
                 <a-row>
                     <a-col :span="10">
                         <a-form-item
-                            label="单位名称:"
+                            label="处室名称:"
                             :label-col="{ span: 5 }"
                             :wrapper-col="{ span: 16 }"
                         >
-                            <a-input v-model="name" placeholder="单位名称" />
+                            <a-input v-model="name" placeholder="处室名称" />
                         </a-form-item>
                     </a-col>
 
@@ -34,7 +34,7 @@
                     <a-col :span="24">
                         <a-form-item>
                             <a-button type="primary" @click="onShow">
-                                添加单位
+                                添加处室
                             </a-button>
                         </a-form-item>
                     </a-col>
@@ -99,7 +99,7 @@
                     />
                 </a-form-item>
 
-                <a-form-item label="单位名称" v-bind="layoutStyle">
+                <a-form-item label="处室名称" v-bind="layoutStyle">
                     <a-input
                         v-decorator="[
                             'name',
@@ -107,7 +107,7 @@
                                 rules: [
                                     {
                                         required: true,
-                                        message: '请填写单位名称!'
+                                        message: '请填写处室名称!'
                                     }
                                 ]
                             }
@@ -115,7 +115,7 @@
                     />
                 </a-form-item>
 
-                <a-form-item label="单位简称" v-bind="layoutStyle">
+                <a-form-item label="处室简称" v-bind="layoutStyle">
                     <a-input
                         v-decorator="[
                             'fullName',
@@ -123,7 +123,7 @@
                                 rules: [
                                     {
                                         required: true,
-                                        message: '请填写单位简称!'
+                                        message: '请填写处室简称!'
                                     }
                                 ]
                             }
@@ -272,7 +272,7 @@ const accountColumns = [
         scopedSlots: { customRender: "mobile" }
     },
     {
-        title: "单位",
+        title: "处室",
         width: 130,
         dataIndex: "organizationName",
         scopedSlots: { customRender: "organizationName" }
@@ -307,7 +307,7 @@ export default {
             visible: false,
             visibleAccount: false,
             editOrg: "",
-            title: "新增单位",
+            title: "新增处室",
             layoutStyle: {
                 labelCol: {
                     span: 9
@@ -375,7 +375,7 @@ export default {
             });
             return trees;
         },
-        //获取单位列表数据
+        //获取处室列表数据
         getOrgList({ regionId, name = "", pageNum = "" }) {
             getPage({ regionId, name, pageNum })
                 .then(res => {
@@ -417,7 +417,7 @@ export default {
         onShow() {
             this.visible = true;
             this.editOrg = "";
-            this.title = "新增单位";
+            this.title = "新增处室";
         },
         onClose() {
             this.visible = false;
@@ -502,7 +502,7 @@ export default {
         handleChange(org) {
             this.visible = true;
             this.editOrg = org;
-            this.title = "单位修改：" + org.name;
+            this.title = "处室修改：" + org.name;
             setTimeout(() => {
                 this.form.setFieldsValue({
                     sort: parseInt(org.sort),

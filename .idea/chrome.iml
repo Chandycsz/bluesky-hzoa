@@ -2,7 +2,15 @@
 <module type="JAVA_MODULE" version="4">
   <component name="NewModuleRootManager" inherit-compiler-output="true">
     <exclude-output />
-    <content url="file://$MODULE_DIR$" />
+    <content url="file://$MODULE_DIR$/bluesky-framework">
+      <sourceFolder url="file://$MODULE_DIR$/bluesky-framework/bluesky-framework-security-spring-boot-starter/src/main/java" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/bluesky-framework/bluesky-framework-common/src/main/java" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/bluesky-framework/bluesky-framework-core/src/main/java" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/bluesky-framework/bluesky-framework-api/src/main/java" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/bluesky-framework/bluesky-framework-server/src/main/java" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/bluesky-framework/bluesky-framework-core/src/test/java" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/bluesky-framework/bluesky-framework-spring-boot-starter/src/main/java" isTestSource="false" />
+    </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
   </component>

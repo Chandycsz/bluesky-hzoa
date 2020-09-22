@@ -2,7 +2,7 @@
     <div id="login">
         <header class="login-header">
             <div class="logo-div">
-                <img src="../assets/images/logo.png" alt class="logo" />
+                <!-- <img src="../assets/images/logo.png" alt class="logo" /> -->
             </div>
         </header>
         <div class="container" :style="themeStyle">
@@ -196,7 +196,7 @@ export default {
                                     .dispatch("setMenuAction")
                                     .then(() => {
                                         this.$router.push({
-                                            name: "SelectModule"
+                                            name: "notice_manage"
                                         });
                                     });
                             });

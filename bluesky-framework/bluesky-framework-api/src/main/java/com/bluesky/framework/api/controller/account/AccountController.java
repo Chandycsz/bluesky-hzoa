@@ -53,9 +53,9 @@ public class AccountController {
     @PreAuthorize("hasPermission('crm-api','om_user_add')")
     public DataResponse add(@AuthenticationPrincipal Account account, HttpServletRequest request,
                             @RequestParam String name, @RequestParam String password,
-                            @RequestParam String passwordConfirm, @RequestParam String mobile,
+                            @RequestParam String mobile,
                             @RequestParam Long roleId, @RequestParam Long organizationId,
-                            @RequestParam(required = false) String department, @RequestParam String idCard,
+                            @RequestParam(required = false) String department, @RequestParam(required = false) String idCard,
                             @RequestParam(required = false) Integer sort, @RequestParam(required = false, defaultValue = "0") Integer status) {
         DataResponse result = new DataResponse();
 
@@ -65,9 +65,7 @@ public class AccountController {
         if (!isMobileLegal(mobile, null, result)) {
             return result;
         }
-        if (!isPasswordLegal(password, passwordConfirm, result)) {
-            return result;
-        }
+
         Organization organization = isOrganizationIdExistAndHasAuth(organizationId, account, result);
         if (organization == null) {
             return result;
@@ -82,8 +80,11 @@ public class AccountController {
         if (!isDepartmentLegal(department, result)) {
             return result;
         }
-        if (!isIdCartLegal(idCard, result)) {
-            return result;
+
+        if (idCard != null) {
+            if (!isIdCartLegal(idCard, result)) {
+                return result;
+            }
         }
         if (!isStatusLegal(status, result)) {
             return result;

@@ -59,7 +59,7 @@
                             v-else
                             :to="{
                                 path:
-                                    '/crm/new/page/' +
+                                    '/crm/' +
                                     card.childMenuSourceList[0].code,
                                 query: { id: card.childMenuSourceList[0].id }
                             }"
@@ -114,7 +114,7 @@
                         class="card-style2"
                         :to="{
                             path:
-                                '/crm/new/page/' +
+                                '/crm/' +
                                 card.childMenuSourceList[0].code,
                             query: { id: card.childMenuSourceList[0].id }
                         }"

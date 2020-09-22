@@ -63,19 +63,20 @@ router.beforeEach((to, from, next) => {
                     //         }
                     //     }
                     // }
-                    window.less
-                        .modifyVars(
-                            //更换主题颜色要这么写
-                            {
-                                "@primary-color": store.getters.workTheme.value,
-                                "@btn-primary-bg":
-                                    store.getters.workTheme.value,
-                                "@link-color": store.getters.workTheme.value
-                            }
-                        )
-                        .then(() => {
-                            next();
-                        });
+                    // window.less
+                    //     .modifyVars(
+                    //         //更换主题颜色要这么写
+                    //         {
+                    //             "@primary-color": store.getters.workTheme.value,
+                    //             "@btn-primary-bg":
+                    //                 store.getters.workTheme.value,
+                    //             "@link-color": store.getters.workTheme.value
+                    //         }
+                    //     )
+                    //     .then(() => {
+                    //         next();
+                    //     });
+                    next();
                 })
             )
             .catch(err => {

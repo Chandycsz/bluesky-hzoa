@@ -16,43 +16,6 @@ var router = new Router({
             },
             children: [
                 {
-                    name: "IndexEnter",
-                    path: "index",
-                    title: "首页",
-                    redirect: {
-                        name: "SelectModule"
-                    },
-                    component: () => {
-                        return import("@/pages/IndexEnter");
-                    },
-                    children: [
-                        {
-                            name: "SelectModule",
-                            path: "selectModule",
-                            meta: {
-                                login: false,
-                                title: "首页",
-                                authorize: false
-                            },
-                            component: () => {
-                                return import("@/pages/index/SelectModule");
-                            }
-                        },
-                        {
-                            name: "SearchList",
-                            path: "searchList",
-                            meta: {
-                                login: true,
-                                title: "信用查询",
-                                authorize: false
-                            },
-                            component: () => {
-                                return import("@/pages/index/SearchList");
-                            }
-                        }
-                    ]
-                },
-                {
                     name: "XYPT",
                     path: "crm",
                     meta: {
@@ -68,6 +31,11 @@ var router = new Router({
                         {
                             name: "XyptHome",
                             path: "xyptHome",
+                            meta: {
+                                title: "首页",
+                                login: true,
+                                authorize: false
+                            },
                             component: () => {
                                 return import("@/pages/Home");
                             }
@@ -84,55 +52,15 @@ var router = new Router({
                                 return import("@/pages/setting/LoginManage");
                             }
                         },
-                        {
-                            name: "pro_hinfo",
-                            path: "pro_hinfo",
-                            title: "项目修改历史信息",
-                            component: () => {
-                                return import("@/pages/project/PhInfo");
-                            }
-                        },
-                        {
-                            name: "add_proinfo",
-                            path: "add_proinfo",
-                            title: "新增项目信息",
-                            component: () => {
-                                return import("@/pages/project/AddPro_info");
-                            }
-                        },
-                        {
-                            name: "Proinfo",
-                            path: "proinfo",
-                            title: "项目信息",
-                            // meta: {
-                            //     title: "项目信息",
-                            //     login: true,
-                            //     authorize: false
-                            // },
-                            component: () => {
-                                return import("@/pages/project/Project");
-                            }
-                        },
-                        {
-                            name: "sm_index_manage",
-                            path: "sm_index_manage",
-                            // meta: {
-                            //     title: "首页管理",
-                            //     login: true,
-                            //     authorize: false
-                            // },
-                            component: () => {
-                                return import("@/pages/setting/IndexManage");
-                            }
-                        },
+
                         {
                             name: "sm_menu_manage",
                             path: "sm_menu_manage",
-                            // meta: {
-                            //     title: "菜单栏管理",
-                            //     login: true,
-                            //     authorize: false
-                            // },
+                            meta: {
+                                title: "菜单栏管理",
+                                login: true,
+                                authorize: false
+                            },
                             component: () => {
                                 return import("@/pages/setting/MenuManage");
                             }
@@ -140,11 +68,11 @@ var router = new Router({
                         {
                             name: "sm_work_manage",
                             path: "sm_work_manage",
-                            // meta: {
-                            //     title: "工作页管理",
-                            //     login: true,
-                            //     authorize: false
-                            // },
+                            meta: {
+                                title: "工作页管理",
+                                login: true,
+                                authorize: false
+                            },
                             component: () => {
                                 return import("@/pages/setting/WorkManage");
                             }
@@ -173,70 +101,57 @@ var router = new Router({
                                 return import("@/pages/yhgl/RegionManage");
                             }
                         },
+
+
                         {
-                            name: "pro_manage",
-                            path: "pro_manage",
-                            title: "项目管理",
+                            name: "notice_visit",
+                            path: "notice_visit",
+                            title: "公告查看",
+                            meta: {
+                                title: "公告查看",
+                                login: true,
+                                authorize: false
+                            },
+                            component: () => {
+                                return import("@/pages/OAsystem/noticeVisit");
+                            }
+                        },
+                        {
+                            name: "notice_add",
+                            path: "notice_add",
+                            title: "申请公告",
                             // meta: {
-                            //     title: "行政区管理",
+                            //     title: "申请公告",
                             //     login: true,
                             //     authorize: false
                             // },
                             component: () => {
-                                return import("@/pages/project/Project_Manager");
+                                return import("@/pages/OAsystem/noticeAdd");
                             }
                         },
                         {
-                            name: "pro_milestone",
-                            path: "pro_milestone",
-                            title: "项目信息",
-                            // meta: {
-                            //     title: "项目信息",
-                            //     login: true,
-                            //     authorize: false
-                            // },
+                            name: "sm_index_manage",
+                            path: "sm_index_manage",
+                            meta: {
+                                title: "首页管理",
+                                login: true,
+                                authorize: false
+                            },
                             component: () => {
-                                return import("@/pages/project/Pro_milestone");
+                                return import("@/pages/setting/IndexManage");
                             }
                         },
                         {
-                            name: "mis_peo_info",
-                            path: "mis_peo_info",
-                            title: "任务人员信息",
+                            name: "notice_manage",
+                            path: "notice_manage",
+                            title: "公告查看",
+                            meta: {
+                                title: "公告查看",
+                                login: true,
+                                authorize: false
+                            },
                             component: () => {
-                                return import("@/pages/project/MispeoInfo");
-                            }
-                        },
-                        {
-                            name: "mission_info",
-                            path: "mission_info",
-                            title: "任务信息",
-                            component: () => {
-                                return import("@/pages/project/MissionInfo");
-                            }
-                        },
-                        {
-                            name: "add_milestone",
-                            path: "add_milestone",
-                            title: "新增项目信息",
-                            component: () => {
-                                return import("@/pages/project/Add_milestone");
-                            }
-                        },
-                        {
-                            name: "addmission",
-                            path: "addmission",
-                            title: "新增任务信息",
-                            component: () => {
-                                return import("@/pages/project/Add_mission");
-                            }
-                        },
-                        {
-                            name: "mil_hinfo",
-                            path: "mil_hinfo",
-                            title: "新增项目信息",
-                            component: () => {
-                                return import("@/pages/project/Pro_history_milestone");
+                                return import("@/pages/OAsystem/noticeManage");
                             }
                         },
                         {

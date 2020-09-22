@@ -36,18 +36,18 @@ module.exports = {
             new AntDesignThemePlugin({
                 antDir: path.join(__dirname, "./node_modules/ant-design-vue"), //antd包位置
                 stylesDir: "./src/assets/theme", //指定皮肤文件夹
-                varFile: "", //自己设置默认的主题色
+                // varFile: "", //自己设置默认的主题色
                 indexFileName: "./public/index.html",
                 mainLessFile: "",
                 outputFilePath: path.join(
                     __dirname,
                     "./src/assets/theme/color.less"
                 ), //输出到什么地方
-                themeVariables: [
-                    //这里写要改变的主题变量
-                    "@primary-color",
-                    "@btn-primary-bg"
-                ],
+                // themeVariables: [
+                //     //这里写要改变的主题变量
+                //     "@primary-color",
+                //     "@btn-primary-bg"
+                // ],
                 generateOnce: false
             })
         ]

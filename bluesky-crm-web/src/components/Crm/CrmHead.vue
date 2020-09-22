@@ -14,9 +14,6 @@
                 />
                 {{ storeAccount.name }}
             </span>
-            <router-link :to="{ name: 'SelectModule' }" replace>
-                首页
-            </router-link>
             <a class="nav-right-item" href="javascript:;" @click="out">
                 退出
             </a>

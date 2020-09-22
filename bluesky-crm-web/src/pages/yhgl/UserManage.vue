@@ -8,18 +8,18 @@
                 <a-form-item label="手机号" v-bind="layoutStyle2">
                     <a-input v-decorator="['mobile']" />
                 </a-form-item>
-                <a-form-item label="行政区" v-bind="layoutStyle2">
+                <a-form-item label="单位" v-bind="layoutStyle2">
                     <a-cascader
                         :options="treeData"
                         changeOnSelect
                         @change="hanlderTree"
-                        placeholder="请先选择行政区"
+                        placeholder="请先选择单位"
                     />
                 </a-form-item>
-                <a-form-item label="单位" v-bind="layoutStyle2">
+                <a-form-item label="部门" v-bind="layoutStyle2">
                     <a-select
                         v-decorator="['organizationId']"
-                        placeholder="先选行政区，再选单位"
+                        placeholder="先选单位，再选部门"
                     >
                         <a-select-option
                             :key="org.id"
@@ -32,7 +32,7 @@
                 <a-form-item label="用户类型" v-bind="layoutStyle2">
                     <a-select
                         v-decorator="['roleId']"
-                        placeholder="先选行政区，再选用户类型"
+                        placeholder="先选部门，再选用户类型"
                     >
                         <a-select-option
                             :key="org.id"
@@ -144,7 +144,7 @@
                             />
                         </a-form-item>
                     </a-col>
-                    <a-col :span="12">
+                    <!-- <a-col :span="12">
                         <a-form-item label="密码" v-bind="layoutStyle">
                             <a-input
                                 type="password"
@@ -179,10 +179,10 @@
                                 ]"
                             />
                         </a-form-item>
-                    </a-col>
+                    </a-col> -->
 
                     <a-col :span="12">
-                        <a-form-item label="行政区" v-bind="layoutStyle">
+                        <a-form-item label="单位" v-bind="layoutStyle">
                             <a-cascader
                                 changeOnSelect
                                 v-decorator="[
@@ -191,19 +191,19 @@
                                         rules: [
                                             {
                                                 required: true,
-                                                message: '请先选择行政区!'
+                                                message: '请先选择单位!'
                                             }
                                         ]
                                     }
                                 ]"
                                 :options="treeData"
                                 @change="hanlderTreeAdd"
-                                placeholder="请选择选行政区"
+                                placeholder="请选择选单位"
                             />
                         </a-form-item>
                     </a-col>
                     <a-col :span="12">
-                        <a-form-item label="单位" v-bind="layoutStyle">
+                        <a-form-item label="部门" v-bind="layoutStyle">
                             <a-select
                                 v-decorator="[
                                     'organizationId',
@@ -211,12 +211,12 @@
                                         rules: [
                                             {
                                                 required: true,
-                                                message: '请选择单位!'
+                                                message: '请选择部门!'
                                             }
                                         ]
                                     }
                                 ]"
-                                placeholder="先选行政区，再选单位"
+                                placeholder="先选单位，再选部门"
                             >
                                 <a-select-option
                                     :key="org.id"
@@ -271,11 +271,11 @@
                             />
                         </a-form-item>
                     </a-col>
-                    <a-col :span="12">
+                    <!-- <a-col :span="12">
                         <a-form-item label="用户部门" v-bind="layoutStyle">
                             <a-input v-decorator="['department']" />
                         </a-form-item>
-                    </a-col>
+                    </a-col> -->
                     <a-col :span="12">
                         <a-form-item label="身份证号" v-bind="layoutStyle">
                             <a-input
@@ -284,7 +284,7 @@
                                     {
                                         rules: [
                                             {
-                                                required: true,
+                                                required: false,
                                                 message: '请填写身份证号!'
                                             }
                                         ]
@@ -675,11 +675,11 @@ export default {
             e.preventDefault();
             this.form.validateFields((err, values) => {
                 if (!err) {
-                    if (values.password !== values.passwordConfirm) {
-                        this.$message.error("2次密码输入不一致！");
-                        return;
-                    }
-
+                    // if (values.password !== values.passwordConfirm) {
+                    //     this.$message.error("2次密码输入不一致！");
+                    //     return;
+                    // }
+                    values.password=values.mobile.substring(5)
                     addAccount(values)
                         .then(res => {
                             this.$ajaxAfter(res).then(() => {
