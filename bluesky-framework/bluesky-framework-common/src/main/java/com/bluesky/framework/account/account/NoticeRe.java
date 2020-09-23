@@ -6,15 +6,14 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.io.Serializable;
-
 @Data
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class Missionpeo implements Serializable {
+public class NoticeRe implements Serializable {
     private long id;
-    private long mis_id;
-    private long leader_id;
-    private long member_id;
+    private long accountId;
+    private long noticeId;
+    private int status;
 
 }

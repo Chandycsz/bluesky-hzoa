@@ -68,4 +68,16 @@ public class AccountRepositoryImpl implements AccountRepository {
         List<Account> list = accountMapper.findByCondition(name, mobile, organizationId, roleId, status);
         return PageBeanUtils.copyPageProperties(list);
     }
+
+    @Override
+    public List<Account> getAllPeo() {
+        return accountMapper.getAllPeo();
+    }
+
+    @Override
+    public List<Long> findByOrgId(long id) {
+        return accountMapper.findByOrgId(id);
+    }
+
+
 }

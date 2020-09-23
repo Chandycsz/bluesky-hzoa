@@ -13,7 +13,9 @@ import "ant-design-vue/dist/antd.less";
 import "@/assets/global.css";
 import ElementUI from 'element-ui';
 import 'element-ui/lib/theme-chalk/index.css';
+import Antd from 'ant-design-vue';
 Vue.use(ElementUI)
+Vue.use(Antd)
 const progressBarConfig = {
     autoFinish: false,
     failedColor: "red" // 失败显示的颜色

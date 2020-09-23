@@ -133,3 +133,7 @@ export function enableOrg(id) {
 export function disableOrg(id) {
     return axios.post(api + "/organization/" + id + "/disable");
 }
+
+export function getAllOrg() {
+    return axios.post(api + "/organization/getAllOrg" );
+}

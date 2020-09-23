@@ -13,15 +13,13 @@ import java.util.Date;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class MissionList implements Serializable {
-    private Long id;
-    private Long pro_id;
-    private Long mile_id;
-    private String headline;
+public class OverTime implements Serializable {
+    private long id;
+    @JsonFormat(pattern="yyyy-MM-dd hh",timezone="GMT+8")
+    private Date startTime;
+    @JsonFormat(pattern="yyyy-MM-dd hh",timezone="GMT+8")
+    private Date endTime;
+    private String overtime;
     private String statement;
-    private String status;
-    private String type;
-    private String priority;
-    @JsonFormat(pattern="yyyy-MM-dd HH:mm:ss",timezone="GMT+8")
-    private Date deadline;
+    private long creatorId;
 }

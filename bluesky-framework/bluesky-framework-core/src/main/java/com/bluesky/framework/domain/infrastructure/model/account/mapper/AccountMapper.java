@@ -64,4 +64,9 @@ public interface AccountMapper {
      */
     List<Account> findByCondition(@Param("name") String name, @Param("mobile") String mobile, @Param("organizationId") Long organizationId, @Param("roleId") Long roleId, @Param("status") Integer status);
 
+    @Select("select id,name from account where role_type=2")
+    List<Account> getAllPeo();
+
+    @Select("select id from account where organization_id=#{id}")
+    List<Long> findByOrgId(long id);
 }

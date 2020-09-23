@@ -9,22 +9,17 @@ import lombok.NoArgsConstructor;
 import java.io.Serializable;
 import java.util.Date;
 
-/**
- * 任务
- */
 @Data
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class Mission implements Serializable {
-    private Long id;
-    private Long pro_id;
-    private Long mile_id;
-    private String headline;
+public class OverTimeVo implements Serializable {
+    private long id;
+    @JsonFormat(pattern="yyyy-MM-dd hh",timezone="GMT+8")
+    private Date startTime;
+    @JsonFormat(pattern="yyyy-MM-dd hh",timezone="GMT+8")
+    private Date endTime;
+    private String overtime;
     private String statement;
-    private int status;
-    private int type;
-    private int priority;
-    @JsonFormat(pattern="yyyy-MM-dd HH:mm:ss",timezone="GMT+8")
-    private Date deadline;
+    private long creatorId;
 }

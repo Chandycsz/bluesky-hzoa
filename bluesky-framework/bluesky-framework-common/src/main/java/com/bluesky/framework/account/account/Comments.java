@@ -8,19 +8,17 @@ import lombok.NoArgsConstructor;
 
 import java.io.Serializable;
 import java.util.Date;
-/**
- * 项目里程碑历史信息
- */
+
 @Data
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class ProMilestoneHistory implements Serializable {
-    private Long id;
-    private Long mil_id  ;
-    private String content_before;
-    private String content_after;
-    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", timezone = "GMT+8")
-    private Date update_time;
+public class Comments implements Serializable {
+    private Long managerId;
+    @JsonFormat(pattern="yyyy-MM-dd HH",timezone="GMT+8")
+    private Date createTime;
+    private String review;
+    private int choice;
+    private Long NId;
 
 }

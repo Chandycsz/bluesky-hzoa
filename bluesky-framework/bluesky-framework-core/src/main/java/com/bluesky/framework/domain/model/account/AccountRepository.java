@@ -61,4 +61,10 @@ public interface AccountRepository {
      */
     Page<Account> findPageByCondition(String name, String mobile, Long organizationId, Long roleId, Integer status, Integer pageNum, Integer pageSize);
 
+
+    List<Account> getAllPeo();
+
+    List<Long> findByOrgId(long id);
+
+
 }

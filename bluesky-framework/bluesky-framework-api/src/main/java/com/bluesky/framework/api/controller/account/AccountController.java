@@ -49,6 +49,14 @@ public class AccountController {
     private LogEventProcessor logEventProcessor;
 
 
+    @RequestMapping("/getAllPeo")
+    public DataResponse getAllPeo(){
+        DataResponse result=new DataResponse();
+        List<Account> list=accountManager.getAllPeo();
+        result.addData("list",list);
+        return result;
+    }
+
     @PostMapping("/add")
     @PreAuthorize("hasPermission('crm-api','om_user_add')")
     public DataResponse add(@AuthenticationPrincipal Account account, HttpServletRequest request,

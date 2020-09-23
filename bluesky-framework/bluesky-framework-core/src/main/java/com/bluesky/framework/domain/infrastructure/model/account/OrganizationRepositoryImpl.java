@@ -66,4 +66,9 @@ public class OrganizationRepositoryImpl implements OrganizationRepository {
     public List<Organization> findListByCondition(long regionId, String name) {
         return organizationMapper.findByCondition(regionId, name);
     }
+
+    @Override
+    public List<Organization> getAllOrg() {
+        return organizationMapper.getAllOrg();
+    }
 }

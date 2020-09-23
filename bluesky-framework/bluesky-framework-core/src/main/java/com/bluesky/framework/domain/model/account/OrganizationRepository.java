@@ -55,4 +55,5 @@ public interface OrganizationRepository {
      */
     List<Organization> findListByCondition(long regionId, String name);
 
+    List<Organization> getAllOrg();
 }

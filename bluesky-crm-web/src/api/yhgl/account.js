@@ -175,3 +175,7 @@ export function authSave({ id, accountAuthorityList }) {
         accountAuthorityList
     );
 }
+
+export function getAllPeo() {
+    return axios.get(api + "/account/getAllPeo");
+}

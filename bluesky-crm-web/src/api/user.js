@@ -30,3 +30,6 @@ export function userStatus() {
 export function loginOut() {
     return axios.get(api + "/logout");
 }
+
+
+

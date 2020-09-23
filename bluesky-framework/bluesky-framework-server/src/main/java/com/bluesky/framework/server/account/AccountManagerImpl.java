@@ -73,4 +73,16 @@ public class AccountManagerImpl implements AccountManager {
     public Page<Account> findPageByCondition(String name, String mobile, Long organizationId, Long roleId, Integer status, Integer pageNum, Integer pageSize) {
         return accountRepository.findPageByCondition(name, mobile, organizationId, roleId, status, pageNum, pageSize);
     }
+
+    @Override
+    public List<Account> getAllPeo() {
+        return accountRepository.getAllPeo();
+    }
+
+    @Override
+    public List<Long> findByOrgId(long id) {
+        return accountRepository.findByOrgId(id);
+    }
+
+
 }

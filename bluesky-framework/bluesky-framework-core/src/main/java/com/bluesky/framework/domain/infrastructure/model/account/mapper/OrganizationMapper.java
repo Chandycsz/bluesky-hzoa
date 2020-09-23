@@ -49,4 +49,6 @@ public interface OrganizationMapper {
      */
     List<Organization> findByCondition(@Param("regionId") long regionId, @Param("name") String name);
 
+    @Select("select name,id from organization")
+    List<Organization> getAllOrg();
 }

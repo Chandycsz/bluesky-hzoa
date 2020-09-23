@@ -113,7 +113,7 @@ var router = new Router({
                                 authorize: false
                             },
                             component: () => {
-                                return import("@/pages/OAsystem/noticeVisit");
+                                return import("@/pages/OAsystem/notice/noticeVisit");
                             }
                         },
                         {
@@ -126,7 +126,7 @@ var router = new Router({
                             //     authorize: false
                             // },
                             component: () => {
-                                return import("@/pages/OAsystem/noticeAdd");
+                                return import("@/pages/OAsystem/notice/noticeAdd");
                             }
                         },
                         {
@@ -141,7 +141,6 @@ var router = new Router({
                                 return import("@/pages/setting/IndexManage");
                             }
                         },
-                        
                         {
                             name: "notice_manage",
                             path: "notice_manage",
@@ -152,7 +151,46 @@ var router = new Router({
                                 authorize: false
                             },
                             component: () => {
-                                return import("@/pages/OAsystem/noticeManage");
+                                return import("@/pages/OAsystem/notice/noticeManage");
+                            }
+                        },
+                        {
+                            name: "my_audit",
+                            path: "my_audit",
+                            title: "我的审核",
+                            meta: {
+                                title: "我的审核",
+                                login: true,
+                                authorize: false
+                            },
+                            component: () => {
+                                return import("@/pages/OAsystem/audit/myAudit");
+                            }
+                        },
+                        {
+                            name: "work_overtime_manage",
+                            path: "work_overtime_manage",
+                            title: "加班管理",
+                            meta: {
+                                title: "加班管理",
+                                login: true,
+                                authorize: false
+                            },
+                            component: () => {
+                                return import("@/pages/OAsystem/attendance/jiaBan");
+                            }
+                        },
+                        {
+                            name: "leave_manage",
+                            path: "leave_manage",
+                            title: "请假管理",
+                            meta: {
+                                title: "请假管理",
+                                login: true,
+                                authorize: false
+                            },
+                            component: () => {
+                                return import("@/pages/OAsystem/attendance/qingJia");
                             }
                         },
                         {

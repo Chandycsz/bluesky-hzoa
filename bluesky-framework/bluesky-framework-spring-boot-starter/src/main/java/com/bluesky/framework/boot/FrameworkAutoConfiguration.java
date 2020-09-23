@@ -90,33 +90,19 @@ public class FrameworkAutoConfiguration extends DubboBasedAutoConfiguration {
     public ReferenceBean accountAuthorityManager() {
         return getConsumerBean(AccountAuthorityManager.class, properties.getVersion(), properties.getTimeout());
     }
-    @Bean
-    public ReferenceBean ProBaseInformationManager() {
-        return getConsumerBean(ProBaseInformationManager.class, properties.getVersion(), properties.getTimeout());
-    }
-    @Bean
-    public ReferenceBean PhInfoManager() {
-        return getConsumerBean(PhInfoManager.class, properties.getVersion(), properties.getTimeout());
-    }
-    @Bean
-    public ReferenceBean ProMilestone() {
-        return getConsumerBean(ProMilestoneManager.class, properties.getVersion(), properties.getTimeout());
-    }
-    @Bean
-    public ReferenceBean ProMilestoneHistoryManager() {
-        return getConsumerBean(ProMilestoneHistoryManager.class, properties.getVersion(), properties.getTimeout());
-    }
-    @Bean
-    public ReferenceBean ConnectManager() {
-        return getConsumerBean(ConnectManager.class, properties.getVersion(), properties.getTimeout());
-    }
-    @Bean
-    public ReferenceBean MissionManager() {
-        return getConsumerBean(MissionManager.class, properties.getVersion(), properties.getTimeout());
-    }
 
     @Bean
     public ReferenceBean NoticeManager() {
         return getConsumerBean(NoticeManager.class, properties.getVersion(), properties.getTimeout());
+    }
+
+    @Bean
+    public ReferenceBean CommentsManager() {
+        return getConsumerBean(CommentsManager.class, properties.getVersion(), properties.getTimeout());
+    }
+
+    @Bean
+    public ReferenceBean OverTimeManager() {
+        return getConsumerBean(OverTimeManager.class, properties.getVersion(), properties.getTimeout());
     }
 }

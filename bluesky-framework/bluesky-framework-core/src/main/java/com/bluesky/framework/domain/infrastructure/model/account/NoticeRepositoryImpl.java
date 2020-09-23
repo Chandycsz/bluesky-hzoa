@@ -15,8 +15,9 @@ public class NoticeRepositoryImpl implements NoticeRepository {
     private NoticeMapper noticeMapper;
 
     @Override
-    public void addNotice(Notice notice) {
+    public long addNotice(Notice notice) {
         this.noticeMapper.addNotice(notice);
+        return notice.getId();
     }
 
     @Override
@@ -28,5 +29,35 @@ public class NoticeRepositoryImpl implements NoticeRepository {
     @Override
     public void DeleteNoticeById(Long id) {
         this.noticeMapper.DeleteNoticeById(id);
+    }
+
+    @Override
+    public void addRelation(long id, long id2) {
+        this.noticeMapper.addRelation(id,id2);
+    }
+
+    @Override
+    public List<NoticeVo> getNoticeByAId(Long aId) {
+        return noticeMapper.getNoticeByAId(aId);
+    }
+
+    @Override
+    public void visitNotice(Long id,Long account_id) {
+        this.noticeMapper.visitNotice(id,account_id);
+    }
+
+    @Override
+    public List<NoticeVo> ListReviewedNotice() {
+        return noticeMapper.ListReviewedNotice();
+    }
+
+    @Override
+    public List<Long> findChildrenId(Long account_id) {
+        return noticeMapper.findChildrenId(account_id);
+    }
+
+    @Override
+    public void change(Long nId, int choice) {
+        this.noticeMapper.change(nId, choice);
     }
 }

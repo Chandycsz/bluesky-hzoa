@@ -62,4 +62,9 @@ public class OrganizationManagerImpl implements OrganizationManager {
     public List<Organization> findListByCondition(Long regionId, String name) {
         return organizationRepository.findListByCondition(regionId, name);
     }
+
+    @Override
+    public List<Organization> getAllOrg() {
+        return organizationRepository.getAllOrg();
+    }
 }

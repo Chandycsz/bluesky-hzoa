@@ -57,4 +57,6 @@ public interface OrganizationManager {
      * @param name     单位名称
      */
     List<Organization> findListByCondition(Long regionId, String name);
+
+    List<Organization> getAllOrg();
 }

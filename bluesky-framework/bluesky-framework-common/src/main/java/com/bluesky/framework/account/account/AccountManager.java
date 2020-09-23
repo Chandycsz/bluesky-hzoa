@@ -6,6 +6,8 @@ import java.util.List;
 
 public interface AccountManager {
 
+    
+
     Long insert(Account account);
 
 
@@ -90,4 +92,10 @@ public interface AccountManager {
      * @see com.bluesky.framework.account.constant.AccountStatus
      */
     Page<Account> findPageByCondition(String name, String mobile, Long organizationId, Long roleId, Integer status, Integer pageNum, Integer pageSize);
+
+    List<Account> getAllPeo();
+
+    List<Long> findByOrgId(long id);
+
+
 }

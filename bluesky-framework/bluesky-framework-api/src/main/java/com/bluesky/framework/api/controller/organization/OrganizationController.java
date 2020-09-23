@@ -45,6 +45,16 @@ public class OrganizationController {
 
 
     /**
+     * 查询单位
+     */
+    @RequestMapping("/getAllOrg")
+    public DataResponse getAllOrg(){
+        DataResponse result=new DataResponse();
+        List<Organization> list=organizationManager.getAllOrg();
+        result.addData("list",list);
+        return result;
+    }
+    /**
      * 新增单位
      */
     @PostMapping("/add")
